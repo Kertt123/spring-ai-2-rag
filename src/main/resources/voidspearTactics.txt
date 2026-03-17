@@ -1,0 +1,156 @@
+The Voidspire Overview
+The Voidspire raid is the main progression hub for WoW Midnight Season 1, and if you're running heroic or mythic, you'll spend weeks perfecting these encounters. Located in the Voidstorm zone, the Voidspire houses six bosses that escalate in complexity from relatively straightforward mechanics to absolutely brutal multi-phase checks. This voidspire raid guide covers all six encounters with strategy tips for tanks, healers, and DPS.
+
+Release Schedule:
+
+Normal + Heroic: March 17, 2026
+Mythic: March 24, 2026
+The raid is designed around spatial control, coordinated assignments, and clearly defined wipe conditions. You won't out-DPS most mechanics here—positioning and communication matter far more. If your guild is progressing on the voidspire, expect progression to take several lockouts.
+
+Boss	Type	Key Role Checks	Difficulty
+Imperator Averzian	Single	DPS coordination, positioning	Medium
+Vorasius	Single	Tank positioning, healer throughput	Medium-High
+Fallen-King Salhadaar	Single	Fast DPS, add control	Medium
+Vaelgor & Ezzorak	Dual	Balanced DPS, soaking	High
+Lightblinded Vanguard	Triple	Multi-target swaps, positioning	High
+Crown of the Cosmos	Single (multi-phase)	Movement, survivability	Extreme
+Boss 1 - Imperator Averzian
+Imperator Averzian kicks off the voidspire raid with a unique mechanic: a 9-section grid arena where the boss attempts to claim three adjacent spaces in a line. It sounds simple until you're two minutes in and the board is blocked.
+
+Core Mechanic - Grid Control: The arena is divided into nine sections. Averzian casts "Umbral Collapse" on three random spaces, marking them for permanent void claims. Your raid must soak these spots with players to prevent claims. If the boss ever completes a line of three (horizontally, vertically, or diagonally), he casts "March of the Endless," summoning infinite adds and wiping your raid instantly.
+
+Key Abilities:
+
+Umbral Collapse: Marks three grid sections. Assign 3 players to stand on these before the mechanic resolves.
+Dark Tears: Spawns adds in certain grid sections. Tanks should kite the boss away from these to avoid empowerment.
+Shatter: Cleaves the tank. Tank swap as needed.
+Tank Tips: Keep the boss away from Dark Tears spawns. Use the grid strategically—don't allow the boss to position near three unclaimed spaces. Coordinate with your DPS on which sections to leave for the boss to claim (you can afford to give up non-threatening spaces).
+
+Healer Tips: This fight has consistent but not extreme ramp damage. Position yourself where you can reach everyone without being in soaking positions. Call out grid sections so DPS know where to move.
+
+DPS Tips: You're responsible for soaking Umbral Collapse marks. Assign three players per rotation and stick to the callouts. Assign two DPS to handle Dark Tears adds while the rest deal damage to Averzian. Focus on the boss down phases—cleanup is tight on heroic and mythic.
+
+Boss 2 - Vorasius
+Vorasius is where healing gets tested. This stationary boss sits in the arena and deals escalating damage while you manage crystal walls and explosive adds. It's a throughput check more than anything else in the voidspire raid.
+
+Core Mechanic - Crystal Walls: Vorasius periodically slams the ground, creating crystal walls that divide the arena. Your raid has no safe space to stand during the upcoming Void Breath sweeping attack unless these walls are destroyed. To destroy walls, you must pull "Blistercreep" adds into them, detonating the adds and shattering the crystal.
+
+Key Abilities:
+
+Void Breath: A massive sweeping beam dealing extreme shadow damage. This wipes you if walls aren't down in time.
+Primordial Roar: Raid-wide damage that stacks and ramps throughout the fight. Your healing cooldowns need to rotate to handle this.
+Colossal Throw: Tank receives this ability and creates walls on opposite sides of the arena.
+Blistercreep Spawn: Adds spawn and must be kited into walls.
+Tank Tips: Manage positioning for Void Breath—ensure clear line of sight between where you tank and where walls exist. Control Blistercreep movement; kiting is critical. Expect to use defensives actively as Primordial Roar stacks.
+
+Healer Tips: This is the definitive healer DPS check. Primordial Roar is your main healing target. Rotate cooldowns to cover the entire fight. Watch for spikes when walls break and adds detonate. Consider playing around melee DPS who will take splash damage from kiting adds.
+
+DPS Tips: Two players designate as kite specialists. Keep Blistercreeps alive long enough to position them against walls, then burst them at the right moment. Vorasius is stationary, so you can pump damage without movement concerns. Efficient wall breaks = shorter fights = less healing required.
+
+Boss 3 - Fallen-King Salhadaar
+Fallen-King Salhadaar is one of the faster bosses in the voidspire raid, but "faster" doesn't mean easier. The encounter revolves around destroying void orbs before they reach the boss—let one touch him and you wipe.
+
+Core Mechanic - Void Orbs: Two "Concentrated Void" orbs spawn at opposite sides of the arena and are slowly drawn toward Salhadaar. If an orb reaches him, he performs "Void Infusion" and wipes your raid. You must burn these orbs before they reach the boss. When orbs die, they apply "Galactic Miasma," a raid-wide DoT, so you need staggered destruction to let healers breathe.
+
+Key Abilities:
+
+Void Infusion: Instant raid wipe if an orb reaches the boss.
+Galactic Miasma: Raid-wide DoT applied when orbs die. Stagger kills to avoid overlapping DoT.
+Fractured Image: Adds spawn and should be controlled via interrupts or crowd control.
+Cosmic Unraveling: At 100 energy, Salhadaar enters a damage-amplification phase where he takes increased damage. This is your DPS window.
+Tank Tips: Manage spacing for spike patterns (spread away from raid). Tank the boss away from orb spawn locations if possible. Be ready for tank-targeted bursts during Cosmic Unraveling.
+
+Healer Tips: Coordinate orb kills with your tank so Galactic Miasma doesn't overlap. You'll be healing steady raid-wide damage plus spikes. Save bigger cooldowns for Cosmic Unraveling phases.
+
+DPS Tips: Assign two DPS to each orb rotation. Burn orbs quickly before they travel far. During Cosmic Unraveling, focus all damage on Salhadaar—this is your kill window. Interrupt or stun Fractured Image adds to prevent them from snowballing.
+
+Boss 4 - Vaelgor & Ezzorak
+Welcome to the voidspire raid's first major wall. Vaelgor and Ezzorak are twin dragons, and this dual-boss fight demands balanced DPS, positioning discipline, and clean soaking mechanics. Let one dragon significantly outlevel the other and they'll enrage.
+
+Core Mechanic - Balanced Kills & Soaking: The dragons must die within 10% HP of each other, or the survivor enters an enrage. Additionally, "Gloom" orbs spawn and require player soaks—alternating pairs must soak these to prevent raid-wide damage. Positioning the dragons apart prevents their zone effects from overlapping, which would kill squishier players.
+
+Key Abilities:
+
+Gloom Orbs: Spawn and require alternating pairs to soak. Missing a soak causes heavy raid damage.
+Nullbeam Tether: Tank-targeted tether that can't stretch too far. Manage tank positioning so tethers don't span the entire arena.
+Dread Breath: Wide cone cleave. Position DPS around and behind the dragons.
+Midnight Flames: Periodic raid-wide damage requiring shelter inside the "Radiant Barrier" shield.
+Add Spawns: Manage and kite as needed.
+Tank Tips: Split tanks so one owns each dragon. Coordinate positioning to keep dragons apart and prevent overlapping mechanics. Manage Nullbeam tethers—don't over-extend. Swap at 3-4 stacks of tank debuffs.
+
+Healer Tips: Position between the two dragons for coverage. Gloom orbs deal moderate damage to soaking players, so heal them reactively. Midnight Flames forces the raid into a tight shield—prepare for spike healing on those windows.
+
+DPS Tips: Balance your damage to keep HP roughly equal on both dragons. Assign half your squad to each dragon and commit to that assignment. Soak Gloom orbs as called (likely random targets rotating). Stack for Midnight Flames and burst immediately after.
+
+Boss 5 - Lightblinded Vanguard
+The Lightblinded Vanguard brings three simultaneous bosses to the voidspire raid: Commander Venel Lightblood, General Amias Bellamy, and War Chaplain Senn. Each operates on an independent energy bar and brings a completely different toolkit.
+
+Core Mechanic - Triple Bosses, Independent Energy: Each boss has its own energy meter, and when one reaches full energy, it applies a unique aura affecting the entire raid. Lightblood grants damage buff (help your DPS), Bellamy grants damage reduction (walls your healers), and Senn grants pacification (literally stops action). Positioning bosses apart prevents their consecration zones from overlapping and cluttering the arena.
+
+Key Abilities (Per Boss):
+
+Lightblood: Applies offensive buff aura when empowered. Tanks manage melee cleaves and AoE.
+Bellamy: Applies defensive buff aura. Generates healer-targeting mechanics.
+Senn: Applies pacification (silences and locks actions). Affects entire raid.
+Tyr's Wrath: Absorb shields requiring healing. Coordinate shield breakage with damage phases.
+Divine Toll: Silence mechanics during special phases.
+Tank Tips: Assign one tank per two bosses or split among three depending on gear. Expect to swap multiple times as auras change. Manage spacing so bosses don't cluster.
+
+Healer Tips: Tyr's Wrath absorbs are your primary healing target outside direct damage. Coordinate with DPS on shield timing. When Senn's pacification is active, pre-heal hard and use instant-cast abilities. This fight is heavy on healing assignments.
+
+DPS Tips: Focus target swaps based on boss aura states. When Bellamy's damage reduction is active, don't waste cooldowns. When Lightblood's buff is up, maximize burst windows. Avoid standing in boss consecration zones (assign zones beforehand). Spread to prevent AoE overlap.
+
+Boss 6 - Crown of the Cosmos (Alleria Windrunner)
+Crown of the Cosmos is the final boss of the voidspire raid and the hardest encounter in the entire tier. This multi-stage fight against Alleria Windrunner after her full descent into Void power will test every aspect of your raid's coordination.
+
+Phase 1 - Undying Sentinels Phase: Three Undying Sentinels must be controlled while managing Alleria's mechanics. The phase doesn't progress until sentinels are managed properly—it's a positioning puzzle as much as a DPS check.
+
+Key Mechanics:
+
+Echoing Darkness: Raid wipe if tanks lose melee range on Alleria. Maintain constant proximity.
+Silverstrike Arrow: Cleansing lines that avoid and navigate cleanly.
+Grasp of Emptiness: Beam explosions requiring movement discipline.
+Void Zones: Persist throughout the fight; manage spacing carefully.
+Intermission: Brutal movement test before Phase 2 begins.
+Tank Tips: Stay within melee range of Alleria to prevent Echoing Darkness. Pre-position before void zones spawn. Expect consistent bursty damage during intermission.
+
+Healer Tips: This is THE healer fight. Alleria's damage ramps significantly in Phase 2. Spend Phase 1 practicing positioning and cooldown rotation. You'll need every tool available. Intermission is an AoE spam window—be ready with raid cooldowns.
+
+DPS Tips: Phase 1 is about cleaning up sentinels without tunnel-visioning on Alleria. During intermission, maximize mobility DPS. Phase 2 will go lethal fast—every single damage dealer matters. Optimize your rotation and positioning obsessively during progression.
+
+Voidspire Loot Highlights
+The voidspire raid drops Tier 35 gear and currency to upgrade your items. Here are the pieces most raiders target:
+
+Tier Set Tokens: Vorasius drops tokens for all four armor classes, making it the highest-value farm boss. Plan your lockout farming around this drop.
+Trinkets: Watch the Voidspire drops for trinkets that match your class. Raid trinkets typically offer solid throughput gains for three tiers.
+Weapon Upgrades: Weapon drops are limited, so prioritize these in loot council during early progression.
+Tier Pieces from Bosses 2-4: Secondary tier sources drop from Vorasius, Fallen-King Salhadaar, and Vaelgor & Ezzorak.
+Tips for Clearing the Voidspire
+Composition Recommendations:
+
+Run at least one ranged tank if possible (easier for add kiting and mobility).
+Healing comp: 2 healer minimum for normal, 3 for heroic, 3-4 for mythic depending on gear.
+DPS: Stack ranged-heavy for crystal wall management and mobility fights.
+Call timings explicitly: "Soaking now," "Incoming AoE," "Orb exploding in 3...2...1"
+Consumables: Use race-appropriate potions and flasks for your role. Buff foods that match your stats. On mythic, pre-potting before pull and pre-casting flasks is required.
+
+General Advice:
+
+Record voidspire pulls for review. You will miss callouts or mechanics on the first 20 attempts.
+Test positioning in-raid before progression. Vorasius and Lightblinded Vanguard reward pre-planning positioning.
+Assign roles explicitly. Don't rely on "someone will soak the orb." Name names.
+Take frequent breaks. Voidspire progression is mentally taxing. A rested raid performs better than a tired one.
+Struggling with Progression? Our Voidspire Heroic Carry gets your raid through all 6 bosses with full loot in a single session. For guilds pushing mythic, check our Cutting Edge service to secure the final boss kill before the season resets.
+
+Frequently Asked Questions
+When does The Voidspire open?
+The Voidspire opens on March 17, 2026, for Normal and Heroic difficulties. Mythic opens one week later on March 24, 2026. This voidspire raid guide is updated for all three difficulties.
+
+How many bosses are in The Voidspire?
+The Voidspire has 6 bosses: Imperator Averzian, Vorasius, Fallen-King Salhadaar, Vaelgor and Ezzorak (dual boss), Lightblinded Vanguard (triple boss), and Crown of the Cosmos. Expect 2-3 hours for a guild clear on normal, 3-4 on heroic.
+
+What item level gear drops in The Voidspire?
+The Voidspire drops Tier 35 gear. Item levels vary by difficulty: Normal (405-416), Heroic (421-428), and Mythic (434-441).
+
+Is The Voidspire hard?
+It depends on your raid's experience. Normal is accessible to any guild with reasonable gear. Heroic requires solid positioning and healing coordination. Mythic is genuinely one of the harder raids in the tier—expect weeks of progression on Crown of the Cosmos.

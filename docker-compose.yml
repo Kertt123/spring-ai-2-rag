@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres:
-    image: postgres:13
+    image: pgvector/pgvector:pg13
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
