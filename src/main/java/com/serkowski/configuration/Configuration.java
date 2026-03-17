@@ -33,14 +33,14 @@ public class Configuration {
                                         .maxMessages(30)
                                         .build())
                                 .build(),
-                        new SimpleLoggerAdvisor(),
-                        RetrievalAugmentationAdvisor.builder()
-                                .documentRetriever(VectorStoreDocumentRetriever.builder()
-                                        .similarityThreshold(0.3)
-                                        .topK(4)
-                                        .vectorStore(vectorStore)
-                                        .build())
-                                .build()
+                        new SimpleLoggerAdvisor()
+//                        RetrievalAugmentationAdvisor.builder()
+//                                .documentRetriever(VectorStoreDocumentRetriever.builder()
+//                                        .similarityThreshold(0.3)
+//                                        .topK(4)
+//                                        .vectorStore(vectorStore)
+//                                        .build())
+//                                .build()
                 )
                 .build();
     }
