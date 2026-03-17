@@ -1,0 +1,282 @@
+{
+  "info": {
+    "_postman_id": "d91b6b75-474f-4a06-a391-b720b9b97727",
+    "name": "Spring AI 2 basics",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23929431",
+    "_collection_link": "https://go.postman.co/collection/23929431-d91b6b75-474f-4a06-a391-b720b9b97727?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Chat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Hi\",\n    \"conversationId\": \"1\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/chat/text",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "chat",
+            "text"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chat Structured",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"I need action movies\",\n    \"conversationId\": \"123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/chat/movieRecommendation",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "chat",
+            "movieRecommendation"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chat with img url",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Please describe me this image\",\n    \"imageType\": \"image/png\",\n    \"imageUrl\": \"https://m.media-amazon.com/images/S/pv-target-images/334f00b53cf3ef848ea7048b25711bc98e8236ce1685a096990c80d0965835ea.png\",\n    \"conversationId\": \"3\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/image/textWithImageUrl",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "image",
+            "textWithImageUrl"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chat with img",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "15538866-3589-4b66-8c44-74ae4b6d4b7c",
+              "src": "/Users/Krzysztof_Serkowski/Desktop/Workspace/Learn/ai/DIAL/spring-ai-2-basics/src/main/resources/dialx-banner.png"
+            },
+            {
+              "key": "data",
+              "value": "{ \"message\": \"Please describe that image\", \"conversationId\": \"123\"}",
+              "type": "text",
+              "uuid": "2bd83f13-7a23-4883-b806-183e16a7aec3"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/image/textWithImage",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "image",
+            "textWithImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DIAL chat with img",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Please describe me this image\",\n    \"imageType\": \"image/png\",\n    \"imagePath\": \"dialx-banner.png\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/imageDial/textWithImagePathDial",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "imageDial",
+            "textWithImagePathDial"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DIAL Image Generation",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Please generate for me an image of a daschund\",\n    \"size\": \"1024x1024\",\n    \"style\": \"vivid\",\n    \"quality\": \"standard\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/imageDial/generateImage",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "imageDial",
+            "generateImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "OpenAI Image Generation",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Please generate for me an image of a daschund\",\n    \"quality\": \"standard\",\n    \"height\": 1024,\n    \"width\": 1024\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/image/generateImage",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "image",
+            "generateImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "OpenAI Transcribe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "0485ec9a-ef84-40f7-8404-d2aabd17d58f",
+              "src": "/Users/Krzysztof_Serkowski/Documents/testy/Nowe nagranie 3.m4a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/audio/transcribe",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "audio",
+            "transcribe"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "OpenAI Audio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"Throughout its history, legendary heroes have risen to defend the world from existential threats, such as the undead Scourge led by The Lich King and the world-shattering Cataclysm caused by Deathwing.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/audio/generateAudio",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "audio",
+            "generateAudio"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
