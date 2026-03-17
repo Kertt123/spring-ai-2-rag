@@ -1,6 +1,7 @@
 package com.serkowski.services;
 
 import org.springframework.ai.document.Document;
+import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
 import org.springframework.ai.reader.TextReader;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
@@ -12,9 +13,11 @@ import java.util.List;
 public class VectorStoreService {
 
     private final VectorStore vectorStore;
+    private final KeywordMetadataEnricher keywordMetadataEnricher;
 
-    public VectorStoreService(VectorStore vectorStore) {
+    public VectorStoreService(VectorStore vectorStore, KeywordMetadataEnricher keywordMetadataEnricher) {
         this.vectorStore = vectorStore;
+        this.keywordMetadataEnricher = keywordMetadataEnricher;
     }
 
     public void storeAsVector(Resource file) {
@@ -37,7 +40,8 @@ public class VectorStoreService {
                 .build();
 
         List<Document> splitDocuments = tokenTextSplitter.apply(documents);
+        List<Document> enrichedDocuments = keywordMetadataEnricher.apply(splitDocuments);
 
-        vectorStore.accept(splitDocuments);
+        vectorStore.accept(enrichedDocuments);
     }
 }

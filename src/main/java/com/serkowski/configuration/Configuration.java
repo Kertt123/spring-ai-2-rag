@@ -10,6 +10,7 @@ import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.memory.repository.jdbc.JdbcChatMemoryRepository;
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
 import org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor;
 import org.springframework.ai.rag.preretrieval.query.expansion.MultiQueryExpander;
 import org.springframework.ai.rag.preretrieval.query.transformation.CompressionQueryTransformer;
@@ -82,7 +83,9 @@ public class Configuration {
     }
 
     @Bean
-    public VectorStoreService vectorStoreService(VectorStore vectorStore) {
-        return new VectorStoreService(vectorStore);
+    public VectorStoreService vectorStoreService(VectorStore vectorStore, ChatModel chatModel) {
+        return new VectorStoreService(vectorStore, KeywordMetadataEnricher.builder(chatModel)
+                .keywordCount(5)
+                .build());
     }
 }
