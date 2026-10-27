@@ -19,6 +19,6 @@ public class ChatController {
 
     @PostMapping("/text")
     String text(@RequestBody TextRequest requestBody) {
-        return chatService.getCompletions(requestBody.message(), requestBody.conversationId());
+        return chatService.getCompletions(requestBody.message(), requestBody.conversationId(), requestBody.type());
     }
 }

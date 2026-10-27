@@ -1,5 +1,7 @@
 package com.serkowski.services;
 
+import com.serkowski.model.MetadataKeyword;
+import org.jspecify.annotations.NonNull;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
 import org.springframework.ai.reader.TextReader;
@@ -20,17 +22,8 @@ public class VectorStoreService {
         this.keywordMetadataEnricher = keywordMetadataEnricher;
     }
 
-    public void storeAsVector(Resource file) {
-        List<Document> documents;
-        if (file.getFilename().toLowerCase().endsWith(".pdf")) {
-            TikaDocumentReader pdfReader = new TikaDocumentReader(file);
-            documents = pdfReader.get();
-            documents.forEach(document -> document.getMetadata().put("filename", file.getFilename()));
-        } else {
-            TextReader textReader = new TextReader(file);
-            textReader.getCustomMetadata().put("filename", file.getFilename());
-            documents = textReader.get();
-        }
+    public void storeAsVector(Resource file, List<MetadataKeyword> keywords) {
+        List<Document> documents = getDocuments(file, keywords);
         TokenTextSplitter tokenTextSplitter = TokenTextSplitter.builder()
                 .withChunkSize(1000)
                 .withMinChunkSizeChars(400)
@@ -43,5 +36,22 @@ public class VectorStoreService {
         List<Document> enrichedDocuments = keywordMetadataEnricher.apply(splitDocuments);
 
         vectorStore.accept(enrichedDocuments);
+    }
+
+    private static @NonNull List<Document> getDocuments(Resource file, List<MetadataKeyword> keywords) {
+        List<Document> documents;
+        if (file.getFilename().toLowerCase().endsWith(".pdf")) {
+            TikaDocumentReader pdfReader = new TikaDocumentReader(file);
+            documents = pdfReader.get();
+
+        } else {
+            TextReader textReader = new TextReader(file);
+            documents = textReader.get();
+        }
+        documents.forEach(document -> {
+            document.getMetadata().put("filename", file.getFilename());
+            keywords.forEach(keyword -> document.getMetadata().put(keyword.keyword(), keyword.value()));
+        });
+        return documents;
     }
 }

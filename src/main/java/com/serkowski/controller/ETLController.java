@@ -1,11 +1,13 @@
 package com.serkowski.controller;
 
+import com.serkowski.model.MetadataKeywords;
 import com.serkowski.model.text.TextRequest;
 import com.serkowski.services.VectorStoreService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,8 +22,9 @@ public class ETLController {
     }
 
     @PostMapping("/store")
-    String store(@RequestParam("file") MultipartFile file) {
-        vectorStoreService.storeAsVector(file.getResource());
+    String store(@RequestParam("file") MultipartFile file,
+                 @RequestPart("metadata") MetadataKeywords metadataKeywords) {
+        vectorStoreService.storeAsVector(file.getResource(), metadataKeywords.keywords());
         return "File " + file.getOriginalFilename() + " stored as vector successfully.";
     }
 }

@@ -1,4 +1,4 @@
 package com.serkowski.model.text;
 
-public record TextRequest(String message, String conversationId) {
+public record TextRequest(String message, String conversationId, String type) {
 }
