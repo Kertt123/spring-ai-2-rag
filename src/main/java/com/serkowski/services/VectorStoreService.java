@@ -1,6 +1,7 @@
 package com.serkowski.services;
 
 import com.serkowski.model.MetadataKeyword;
+import com.serkowski.model.Tag;
 import org.jspecify.annotations.NonNull;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
@@ -34,6 +35,9 @@ public class VectorStoreService {
 
         List<Document> splitDocuments = tokenTextSplitter.apply(documents);
         List<Document> enrichedDocuments = keywordMetadataEnricher.apply(splitDocuments);
+
+        // the enricher yields one comma-separated string, which can't be filtered; a list can (tags in [...])
+        enrichedDocuments.forEach(d -> d.getMetadata().put("tags", Tag.parse((String) d.getMetadata().get("excerpt_keywords"))));
 
         vectorStore.accept(enrichedDocuments);
     }

@@ -9,7 +9,7 @@ pgvector.
     chunks with `TokenTextSplitter`, enriched with LLM-generated keywords (`KeywordMetadataEnricher`) and your own
     metadata, then embedded and stored in pgvector.
 *   **RAG chat:** `RetrievalAugmentationAdvisor` with query compression, query rewriting and multi-query expansion
-    (all done by a small `gpt-4.1-nano` model), followed by similarity search (top 4, threshold 0.3) filtered by the
+    (all done by a small `gpt-6-luna` model), followed by similarity search (top 4, threshold 0.3) filtered by the
     `type` metadata.
 *   **Chat memory:** Conversation history (last 30 messages) is kept in PostgreSQL via `JdbcChatMemoryRepository`,
     per `conversationId`.
@@ -73,6 +73,7 @@ The application will be available at `http://localhost:8080`. A ready-made reque
 
 *   `POST /chat/text`: Ask a question answered from the stored documents.
     ```json
-    { "message": "...", "conversationId": "1", "type": "brush" }
+    { "message": "...", "conversationId": "1", "type": "brush", "tags": ["error-codes"] }
     ```
-    `type` filters the retrieved documents by the `type` metadata set during upload.
+    `type` is one of `brush`, `headphones`, `light`, `purifier`, `vacuum` (anything else is rejected with 400). It filters the retrieved documents by the `type` metadata set during upload.
+    `tags` is optional (e.g. `setup`, `usage`, `cleaning`, `maintenance`, `filter`, `battery`, `charging`, `troubleshooting`, `error-codes`, `warranty`, `safety`, `specs`, `accessories`, `other`). Chunks are tagged by an LLM at upload (`KeywordMetadataEnricher`); when you pass tags, only chunks with at least one of them are retrieved. A real deployment could add e.g. an `access_level` filter taken from the authenticated user the same way.

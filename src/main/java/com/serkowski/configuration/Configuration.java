@@ -1,5 +1,6 @@
 package com.serkowski.configuration;
 
+import com.serkowski.model.Tag;
 import com.serkowski.services.ChatCompletionService;
 import com.serkowski.services.VectorStoreService;
 import org.jspecify.annotations.NonNull;
@@ -10,8 +11,8 @@ import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.memory.repository.jdbc.JdbcChatMemoryRepository;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.ChatOptions;
+import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
-import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor;
 import org.springframework.ai.rag.preretrieval.query.expansion.MultiQueryExpander;
 import org.springframework.ai.rag.preretrieval.query.transformation.CompressionQueryTransformer;
@@ -21,6 +22,9 @@ import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @org.springframework.context.annotation.Configuration
 public class Configuration {
@@ -72,8 +76,7 @@ public class Configuration {
     private static ChatClient.@NonNull Builder getNanoModel(ChatModel chatModel) {
         return ChatClient.builder(chatModel)
                 .defaultOptions(ChatOptions.builder()
-                        .model("gpt-4.1-nano")
-                        .temperature(0.0));
+                        .model("gpt-6-luna"));
     }
 
 
@@ -84,7 +87,19 @@ public class Configuration {
 
     @Bean
     public VectorStoreService vectorStoreService(VectorStore vectorStore, ChatModel chatModel) {
+        PromptTemplate template = new PromptTemplate("""
+                From the following excerpt of Dyson device documentation, choose 1 to 3 tags
+                ONLY from this list:
+                %s.
+                Return only the tags, lowercase, comma-separated, with no other text.
+                If nothing fits, return: other
+                
+                Excerpt:
+                {context_str}
+                
+                Tags:""".formatted(Arrays.stream(Tag.values()).map(Tag::value).collect(Collectors.joining(", "))));
         return new VectorStoreService(vectorStore, KeywordMetadataEnricher.builder(chatModel)
+                .keywordsTemplate(template)
                 .keywordCount(5)
                 .build());
     }
