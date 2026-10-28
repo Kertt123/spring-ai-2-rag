@@ -55,20 +55,22 @@ public class HybridDocumentRetriever implements DocumentRetriever {
     private List<Document> keywordSearch(Query query) {
         String words = query.text().trim().replaceAll("\\s+", " or "); // any word may match, not all of them
 
+        String filter = (String) query.context().get(VectorStoreDocumentRetriever.FILTER_EXPRESSION);
+        // ready-made SQL condition, e.g. metadata::jsonb @@ '$."type" == "vacuum"'::jsonpath (same as PgVectorStore uses)
+        String metadataCondition = new PgVectorFilterExpressionConverter()
+                .convertExpression(new FilterExpressionTextParser().parse(filter));
+
         String sql = """
                 SELECT id::text, content FROM vector_store
                 WHERE to_tsvector('english', content) @@ websearch_to_tsquery('english', ?)
-                  AND metadata::jsonb @@ ?::jsonpath
+                  AND %s
                 ORDER BY ts_rank_cd(to_tsvector('english', content), websearch_to_tsquery('english', ?)) DESC
                 LIMIT ?
-                """;
-        String filter = (String) query.context().get(VectorStoreDocumentRetriever.FILTER_EXPRESSION);
-        String jsonPath = new PgVectorFilterExpressionConverter()
-                .convertExpression(new FilterExpressionTextParser().parse(filter));
+                """.formatted(metadataCondition);
 
         return jdbcTemplate.query(sql,
                 (rs, i) -> Document.builder().id(rs.getString(1)).text(rs.getString(2)).build(),
-                words, jsonPath, words, topK);
+                words, words, topK);
     }
 
     /** Reciprocal Rank Fusion: each list gives a document 1/(60+rank) points, the sums decide the order. */
