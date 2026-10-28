@@ -40,10 +40,10 @@ public class Configuration {
                         new SimpleLoggerAdvisor(),
                         RetrievalAugmentationAdvisor.builder()
                                 .queryTransformers(
-                                        CompressionQueryTransformer.builder()
+                                        RewriteQueryTransformer.builder()
                                                 .chatClientBuilder(getNanoModel(chatModel))
                                                 .build(),
-                                        RewriteQueryTransformer.builder()
+                                        CompressionQueryTransformer.builder()
                                                 .chatClientBuilder(getNanoModel(chatModel))
                                                 .build()
                                 )
@@ -60,8 +60,7 @@ public class Configuration {
     private static ChatClient.@NonNull Builder getNanoModel(ChatModel chatModel) {
         return ChatClient.builder(chatModel)
                 .defaultOptions(ChatOptions.builder()
-                        .model("gpt-4.1-nano")
-                        .temperature(0.0));
+                        .model("gpt-6-luna"));
     }
 
 
