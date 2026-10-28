@@ -8,7 +8,7 @@ pgvector.
 *   **ETL / Vector store:** Upload a PDF or text file. It is read (Tika for PDF, `TextReader` otherwise), split into
     chunks with `TokenTextSplitter`, then embedded and stored in pgvector.
 *   **RAG chat:** `RetrievalAugmentationAdvisor` with query compression, query rewriting and multi-query expansion
-    (all done by a small `gpt-4.1-nano` model), followed by similarity search (top 4, threshold 0.3).
+    (all done by a small `gpt-6-luna` model), followed by similarity search (top 4, threshold 0.3).
 *   **Chat memory:** Conversation history (last 30 messages) is kept in PostgreSQL via `JdbcChatMemoryRepository`,
     per `conversationId`.
 
