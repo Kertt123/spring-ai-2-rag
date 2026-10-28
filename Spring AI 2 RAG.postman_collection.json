@@ -1,0 +1,459 @@
+{
+  "info": {
+    "_postman_id": "f5e60e63-a68c-44fe-aff6-6e0fa70d2ab9",
+    "name": "Spring AI 2 RAG",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23929431",
+    "_collection_link": "https://go.postman.co/collection/23929431-f5e60e63-a68c-44fe-aff6-6e0fa70d2ab9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Store",
+      "item": [
+        {
+          "name": "Store brush",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/brush.pdf"
+                  ]
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store headphones",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/headphones.pdf"
+                  ]
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store light",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/light.pdf"
+                  ]
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store purifier",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/purifier.pdf"
+                  ]
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store vacuum",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/vacuum.pdf"
+                  ]
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Store with metadata",
+      "item": [
+        {
+          "name": "Store brush with metadata",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/brush.pdf"
+                  ]
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\n    \"keywords\": [\n        {\n            \"keyword\": \"type\",\n            \"value\": \"BRUSH\"\n        }]}",
+                  "type": "text",
+                  "contentType": "application/json"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store headphones with metadata",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/headphones.pdf"
+                  ]
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\n    \"keywords\": [\n        {\n            \"keyword\": \"type\",\n            \"value\": \"HEADPHONES\"\n        }]}",
+                  "type": "text",
+                  "contentType": "application/json"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store light with metadata",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/light.pdf"
+                  ]
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\n    \"keywords\": [\n        {\n            \"keyword\": \"type\",\n            \"value\": \"LIGHT\"\n        }]}",
+                  "type": "text",
+                  "contentType": "application/json"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store purifier with metadata",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/purifier.pdf"
+                  ]
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\n    \"keywords\": [\n        {\n            \"keyword\": \"type\",\n            \"value\": \"PURIFIER\"\n        }]}",
+                  "type": "text",
+                  "contentType": "application/json"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store vacuum with metadata",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/Users/Krzysztof_Serkowski/Documents/ragFiles/vacuum.pdf"
+                  ]
+                },
+                {
+                  "key": "metadata",
+                  "value": "{\n    \"keywords\": [\n        {\n            \"keyword\": \"type\",\n            \"value\": \"VACUUM\"\n        }]}",
+                  "type": "text",
+                  "contentType": "application/json"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/etl/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "etl",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Chat With metadata",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"How to clean my brush?\",\n    \"conversationId\": \"1\",\n    \"type\": \"BRUSH\",\n    \"tags\": [\"cleaning\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/chat/text",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "chat",
+            "text"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"message\": \"How to clean dyson vaccum?\",\n    \"conversationId\": \"3\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/chat/text",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "chat",
+            "text"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

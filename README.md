@@ -54,7 +54,7 @@ clear the `vector_store` table and re-upload your documents.
     ```
 
 The application will be available at `http://localhost:8080`. A ready-made request set is in
-`Spring AI 2 basics.postman_collection.json`.
+`Spring AI 2 RAG.postman_collection.json`.
 
 ## API Endpoints
 
