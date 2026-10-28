@@ -2,6 +2,7 @@ package com.serkowski.configuration;
 
 import com.serkowski.model.Tag;
 import com.serkowski.services.ChatCompletionService;
+import com.serkowski.services.LlmRerankerDocumentPostProcessor;
 import com.serkowski.services.VectorStoreService;
 import org.jspecify.annotations.NonNull;
 import org.springframework.ai.chat.client.ChatClient;
@@ -37,7 +38,7 @@ public class Configuration {
     }
 
     @Bean
-    public ChatClient chatClient(ChatModel chatModel, JdbcChatMemoryRepository chatMemoryRepository, VectorStore vectorStore) {
+    public ChatClient chatClient(ChatModel chatModel, JdbcChatMemoryRepository chatMemoryRepository, VectorStore vectorStore, LlmRerankerDocumentPostProcessor reranker) {
         return ChatClient.builder(chatModel)
                 .defaultAdvisors(
                         MessageChatMemoryAdvisor.builder(MessageWindowChatMemory.builder()
@@ -68,6 +69,7 @@ public class Configuration {
                                         .topK(4)
                                         .vectorStore(vectorStore)
                                         .build())
+                                .documentPostProcessors(reranker)
                                 .build()
                 )
                 .build();
@@ -102,5 +104,14 @@ public class Configuration {
                 .keywordsTemplate(template)
                 .keywordCount(5)
                 .build());
+    }
+
+    @Bean
+    public LlmRerankerDocumentPostProcessor reranker(ChatModel chatModel) {
+
+        return new LlmRerankerDocumentPostProcessor(
+                getNanoModel(chatModel).build(),
+                3  // keep top 3 after re-ranking
+        );
     }
 }
