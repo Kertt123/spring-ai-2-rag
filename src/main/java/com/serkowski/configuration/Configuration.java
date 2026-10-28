@@ -2,6 +2,7 @@ package com.serkowski.configuration;
 
 import com.serkowski.model.Tag;
 import com.serkowski.services.ChatCompletionService;
+import com.serkowski.services.HybridDocumentRetriever;
 import com.serkowski.services.LlmRerankerDocumentPostProcessor;
 import com.serkowski.services.VectorStoreService;
 import org.jspecify.annotations.NonNull;
@@ -38,7 +39,7 @@ public class Configuration {
     }
 
     @Bean
-    public ChatClient chatClient(ChatModel chatModel, JdbcChatMemoryRepository chatMemoryRepository, VectorStore vectorStore, LlmRerankerDocumentPostProcessor reranker) {
+    public ChatClient chatClient(ChatModel chatModel, JdbcChatMemoryRepository chatMemoryRepository, VectorStore vectorStore, JdbcTemplate jdbcTemplate, LlmRerankerDocumentPostProcessor reranker) {
         return ChatClient.builder(chatModel)
                 .defaultAdvisors(
                         MessageChatMemoryAdvisor.builder(MessageWindowChatMemory.builder()
@@ -64,11 +65,14 @@ public class Configuration {
                                                 .build()
                                 )
                                 .documentJoiner(new ConcatenationDocumentJoiner())
-                                .documentRetriever(VectorStoreDocumentRetriever.builder()
-                                        .similarityThreshold(0.3)
-                                        .topK(4)
-                                        .vectorStore(vectorStore)
-                                        .build())
+                                .documentRetriever(new HybridDocumentRetriever(
+                                        VectorStoreDocumentRetriever.builder()
+                                                .similarityThreshold(0.3)
+                                                .topK(4)
+                                                .vectorStore(vectorStore)
+                                                .build(),
+                                        jdbcTemplate,
+                                        4))
                                 .documentPostProcessors(reranker)
                                 .build()
                 )
